@@ -82,6 +82,7 @@ body {
     align-items: center;
 }
 .contact_bttn {
+    display: flex;
     position: relative;
     margin-top: 20px;
     display: block;
@@ -91,12 +92,20 @@ body {
     border-style: none;
     border-radius: 10px;
     transition: 0.3s;
+    justify-content: center;
+    align-items: center;
 }
 .contact_bttn a {
     font-weight: 700;
-    text-transform: capitalize;
+    text-transform: uppercase;
     text-decoration: none;
     color: white;
+}
+.contact_bttn img {
+    color: white;
+    width: 16px;
+    height: auto;
+    margin-right: 10px;
 }
 .contact_bttn:hover{
     background: #1584CB;
