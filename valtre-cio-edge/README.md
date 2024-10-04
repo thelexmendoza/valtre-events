@@ -1,1 +1,0 @@
-# cynthia-valtre-card
