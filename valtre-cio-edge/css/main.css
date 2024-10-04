@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: gainsboro;
+
+}
+.bebas {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.noborder-list {
+    border-style: hidden;
+}
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+.montserrat_bold{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 10pt;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+.montserrat_p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+.list-center{
+    display: inline-block;
+    text-align: left;
+}
+.ul-contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin:30px 0px 50px;
+}
+.img-rounded{
+    border-radius: 50%;
+    height: 150px;
+    margin-top: 50px;
+    margin-bottom: 5px;
+}
+.Logo {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.vcontainer {
+    width: 420px;
+    padding: 30px;
+    background: white;
+    text-align: center;
+}
+.data-container{
+    margin-top: 20px;
+}
+.wrap {
+    display: inline-flex;
+}
+.wrap img {
+    position: relative;
+    margin-right: 10px;
+}
+.wrap a {
+    text-decoration: none;
+    color: black;
+}
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact_bttn {
+    position: relative;
+    margin-top: 20px;
+    display: block;
+    width: 70%;
+    height: 38px;
+    background: #00AEEF;
+    border-style: none;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.contact_bttn a {
+    font-weight: 700;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: white;
+}
+.contact_bttn:hover{
+    background: #1584CB;
+    width: 75%;
+}
+.goodbye {
+    background-color: #00AEEF;
+    width: 420px;
+    padding: 30px;
+    text-align: center;
+}
+.bebas_gb{
+    font-size: 34px;
+}
+.bebas_gb span {
+    color: white;
+}
+.goodbye_text{
+    margin: 0;
+}
+.goodbye_valtre{
+    margin-top: 20px;
+}
+.goodbye_valtre a {
+    text-decoration: none;
+    color: black;
+}
+.goodbye_list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+.goodbye_list li{
+    margin: 20px 15px 0 15px;
+    list-style-type: none;
+}
+.tiktok{
+    width: 28px;
+    height: auto;
+}
