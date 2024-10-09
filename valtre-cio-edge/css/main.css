@@ -29,6 +29,9 @@ body {
     letter-spacing: 5px;
     text-transform: uppercase;
 }
+.montserrat_bold--jv {
+    letter-spacing: 3px;
+}
 .montserrat_p{
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
