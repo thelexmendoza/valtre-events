@@ -6,10 +6,6 @@
 body {
     justify-content: center;
     align-items: center;
-    background-image: url("../img/conected-dots.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 
 }
 .c-container {
@@ -22,9 +18,11 @@ body {
     border: red solid 0.5px;
 }
 .c-hero {
- 
+    background-image: url("../img/conected-dots.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
 
 /*Medía Querys*/
 /* xxxxs */
