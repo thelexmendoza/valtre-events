@@ -26,7 +26,6 @@ body {
     height: 80px;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    border: red solid 0.5px;
 }
 /*------- H E R O -------*/
 .c-hero {
@@ -42,20 +41,35 @@ body {
     left: 0;
     width: 100%;
     padding: 20px 80px;
-    background-color: aquamarine;
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    -webkit-box-shadow: 0px 10px 35px -12px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 10px 35px -12px rgba(0,0,0,0.35);
+    box-shadow: 0px 10px 35px -12px rgba(0,0,0,0.35);
 }
 .c-navbar__logo {
-    
+    margin: 0;
 }
-.o-hero-nav {
+.c-navbar__logo img {
+    height: 50px;
+    width: 100%;
+}
+.o-hero-nav a {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 800;
     font-style: normal;
     text-decoration: none;
+    color: black;
+    font-size: 13pt;
+}
+.o-hero-nav--desktop{
+    justify-content: space-between;
+}
+.o-hero-nav--desktop a{
+    margin-left: 20px;
 }
 .c-container__hero{
     display: flex;
@@ -71,6 +85,10 @@ body {
 }
 .c-hero__slogan {
     margin: auto;
+}
+/*------- Cobertura -------*/
+.o-h2 {
+    letter-spacing: 2pt;
 }
 
 /*------- Typography -------*/
@@ -88,13 +106,13 @@ body {
     color: #0099ff;
 }
 .o-h2{
-    font-size: 34pt;
+    font-size: 55pt;
 }
 .o-h3{
-    font-size: 21pt;
+    font-size: 34pt;
 }
 .o-h4{
-    font-size: 13pt;
+    font-size: 21pt;
 }
 p a {
     font-family: "Montserrat", sans-serif;
