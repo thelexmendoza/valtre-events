@@ -14,7 +14,15 @@
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
 
-        <!--JS & css-->
+        <meta property="og:site_name" content="Let's go digital together! by Valtre">
+        <meta property="og:url" content="">
+        <meta property="og:title" content="Let's go digital together! by Valtre">
+        <meta property="og:description" content="Sitio web de negocios de Valtre">
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="">
+        <meta property="og:image" content="">
+
+        <!--CSS-->
         <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
         <link rel="stylesheet" type="text/css" href="valtre-cio-edge/css/landing.css">
 
@@ -24,19 +32,12 @@
         <link rel="icon" type="image/png" sizes="16x16" href="valtre-cio-edge/favicon_io/favicon-16x16.png">
         <link rel="manifest" href="valtre-cio-edge/favicon_io/site.webmanifest">
 
-        <!--Typography-->
+        <!--Typography & Icons-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-        <meta property="og:site_name" content="Let's go digital together! by Valtre">
-        <meta property="og:url" content="">
-        <meta property="og:title" content="Let's go digital together! by Valtre">
-        <meta property="og:description" content="Sitio web de negocios de Valtre">
-        <meta property="og:type" content="website">
-        <meta property="og:locale" content="">
-        <meta property="og:image" content="">
     </head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXFMBXVJ40"></script>
@@ -53,17 +54,25 @@
             <div class="c-container--nav">
                 <div class="c-navbar">
                     <a href="#hero" class="c-navbar__logo"><img src="valtre-cio-edge/img/Valtre Logo.svg" alt="Valtre"></a>
-                    <nav class="o-hero-nav o-hero-nav--desktop">
-                        <a href="#services">Cobertura</a>
-                        <a href="#structure">Estructura</a>
-                        <a href="#highlights">Highlights</a>
-                        <a href="#experience">Experiencia</a>
+                    <nav class="o-hero-nav--desktop">
+                        <a href="#hero"class="o-hero-nav__a">Inicio</a>
+                        <a href="#services"class="o-hero-nav__a">Cobertura</a>
+                        <a href="#structure"class="o-hero-nav__a">Estructura</a>
+                        <a href="#highlights"class="o-hero-nav__a">Highlights</a>
+                        <a href="#experience"class="o-hero-nav__a">Experiencia</a>
                     </nav>
-                    <nav class="o-hero-nav o-hero-nav--menu">
-                        <a href="#services">Cobertura</a>
-                        <a href="#structure">Estructura</a>
-                        <a href="#highlights">Highlights</a>
-                        <a href="#experience">Experiencia</a>
+                    <nav class="o-hero-nav--menu">
+                        <input type="checkbox" id="check">
+                        <label for="check">
+                            <i class="o-burger"><img class="o-burger__img" src="valtre-cio-edge/img/burger-menu.svg"></i>
+                        </label>
+                        <div class="c-hero__navmenu">
+                            <a href="#hero" class="o-hero-nav__a o-hero-nav__a--menu m-active__menu" >Inicio</a>
+                            <a href="#services" class="o-hero-nav__a o-hero-nav__a--menu">Cobertura</a>
+                            <a href="#structure" class="o-hero-nav__a o-hero-nav__a--menu">Estructura</a>
+                            <a href="#highlights" class="o-hero-nav__a o-hero-nav__a--menu">Highlights</a>
+                            <a href="#experience" class="o-hero-nav__a o-hero-nav__a--menu">Experiencia</a>
+                        </div>
                     </nav>
                 </div>
             </div>
@@ -103,7 +112,7 @@
         <section class="c-container c-structure" id="structure">
             <h2 class="o-h2">Estructura Organizacional</h2>
             <div class="c-structuremap">
-                <img class="o-structuremap" src="valtre-cio-edge/img/zone-map.png" alt="">
+                <img class="o-structuremap" src="valtre-cio-edge/img/zone-map.svg" alt="">
             </div>
             <div class="c-structuredevelopers">
                 

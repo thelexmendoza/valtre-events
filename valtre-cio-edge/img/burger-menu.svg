@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" x="673.83" y="-290.66" width="960.22" height="540.01"/>
+    </clipPath>
+  </defs>
+  <rect x="1" y="3" width="38" height="8"/>
+  <rect x="1" y="16" width="38" height="8"/>
+  <rect x="1" y="29" width="38" height="8"/>
+</svg>

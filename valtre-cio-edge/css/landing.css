@@ -35,6 +35,22 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.c-container__hero{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.c-hero__logo {
+    margin: auto;
+    width: 40%;
+}
+.o-hero__logo{
+    width: 100%;
+}
+.c-hero__slogan {
+    margin: auto;
+}
+/*------- Nav Bar -------*/
 .c-navbar{
     position: fixed;
     top: 0;
@@ -56,10 +72,10 @@ body {
     height: 50px;
     width: 100%;
 }
-.o-hero-nav a {
+.o-hero-nav__a {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 800;
+    font-weight: 600;
     font-style: normal;
     text-decoration: none;
     color: black;
@@ -71,20 +87,44 @@ body {
 .o-hero-nav--desktop a{
     margin-left: 20px;
 }
-.c-container__hero{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+.o-burger__img {
+    height: 38px;
+    float: right;
+    cursor: pointer;
 }
-.c-hero__logo {
-    margin: auto;
-    width: 40%;
+#check {
+    display: none;
 }
-.o-hero__logo{
+.c-hero__navmenu {
+    position: fixed;
     width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: #0F75BC;
+    top: 80px;
+    left: 0;
+    text-align: center;
+    padding-top: 50px;
+    top: -100%;
+    transition: all 0.5ms;
 }
-.c-hero__slogan {
-    margin: auto;
+.o-hero-nav__a--menu {
+    display: block;
+    color: white;
+    font-weight: 400;
+    padding: 30px 0 30px 0;
+    font-size: 21pt;
+    letter-spacing: 2px;
+    transition: 0.5ms;
+}
+.o-hero-nav__a--menu:hover {
+    background-color: #0099ff;
+}
+.o-hero-nav__a--menu:focus{
+    font-weight: 800;
+}
+#check:checked ~ .c-hero__navmenu {
+    top: auto;
 }
 /*------- Cobertura -------*/
 .o-h2 {
