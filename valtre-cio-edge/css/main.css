@@ -129,7 +129,6 @@ body {
     filter: invert(100%) sepia(0%) saturate(7488%) hue-rotate(97deg) brightness(101%) contrast(96%);
 }
 .contact_bttn:hover{
-    background: #1584CB;
     width: 75%;
 }
 .goodbye {
@@ -146,6 +145,7 @@ body {
 }
 .goodbye_text{
     margin: 0;
+    line-height: 34px;
 }
 .goodbye_valtre{
     margin-top: 20px;
