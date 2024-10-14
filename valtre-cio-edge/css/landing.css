@@ -37,12 +37,25 @@ body {
     background-size: cover;
 }
 .c-navbar{
-    display: inline-block;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-    background-color: white;
     position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 80px;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.c-navbar__logo {
+    
+}
+.o-hero-nav {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
 }
 .c-container__hero{
     display: flex;
@@ -97,6 +110,9 @@ p a {
     .c-container {
         max-width: 320px;
     }
+    .c-container--nav {
+        max-width: 320px;
+    }
     /*---- H E R O ----*/
     .o-hero-nav--desktop {
         display: none;
@@ -122,6 +138,9 @@ p a {
     .c-container {
         max-width: 375px;
     }
+    .c-container--nav {
+        max-width: 375px;
+    }
     /*---- H E R O ----*/
     .o-hero-nav--desktop {
         display: none;
@@ -141,6 +160,9 @@ p a {
 /* xxs - mobile L */
 @media (min-width: 425px) {
     .c-container {
+        max-width: 425px;
+    }
+    .c-container--nav {
         max-width: 425px;
     }
     /*---- H E R O ----*/
@@ -164,6 +186,9 @@ p a {
     .c-container {
         max-width: 475px;
     }
+    .c-container--nav {
+        max-width: 475px;
+    }
     /*---- H E R O ----*/
     .o-hero-nav--desktop {
         display: none;
@@ -183,6 +208,9 @@ p a {
     .c-container {
         max-width: 640px;
     }
+    .c-container--nav {
+        max-width: 640px;
+    }
     /*---- H E R O ----*/
     .o-hero-nav--desktop {
         display: none;
@@ -198,6 +226,9 @@ p a {
 /* md - Tablet */
 @media (min-width: 768px) {
     .c-container {
+        max-width: 768px;
+    }
+    .c-container--nav {
         max-width: 768px;
     }
     /*---- H E R O ----*/
@@ -222,7 +253,13 @@ p a {
     .c-container {
         max-width: 1024px;
     }
+    .c-container--nav {
+        max-width: 1024px;
+    }
     /*---- H E R O ----*/
+    .o-hero-nav--desktop {
+        display: flex;
+    }
     .o-hero-nav--menu {
         display: none;
     }
@@ -246,6 +283,9 @@ p a {
     .c-container {
         max-width: 1280px;
     }
+    .c-container--nav {
+        max-width: 1280px;
+    }
     /*---- H E R O ----*/
     .o-hero-nav--menu {
         display: none;
@@ -255,6 +295,9 @@ p a {
 /* 2xl */
 @media (min-width: 1536px) {
     .c-container {
+        max-width: 1536px;
+    }
+    .c-container--nav {
         max-width: 1536px;
     }
     /*---- H E R O ----*/
