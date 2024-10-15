@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 103 97">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: BebasNeue-Book, 'Bebas Neue';
+      }
+
+      .cls-2 {
+        fill: #00aeef;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+
+      .cls-4 {
+        isolation: isolate;
+      }
+
+      .cls-5 {
+        font-size: 14.63px;
+      }
+
+      .cls-6 {
+        fill: #fff;
+        mix-blend-mode: soft-light;
+      }
+
+      .cls-7 {
+        font-family: BebasNeueBold, 'Bebas Neue';
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-3" x="420.83" y="-471.66" width="960.22" height="540.01"/>
+    </clipPath>
+  </defs>
+  <g class="cls-4">
+    <g id="Capa_1" data-name="Capa 1">
+      <g>
+        <rect class="cls-6" width="102.46" height="96.94" rx="5" ry="5"/>
+        <text class="cls-5" transform="translate(21.78 71.35)"><tspan class="cls-7"><tspan x="0" y="0">Profesional</tspan></tspan><tspan class="cls-1"><tspan x="10.46" y="13.05">training</tspan></tspan></text>
+        <g>
+          <path class="cls-2" d="M60.72,33.38h-18.99c-1.73,0-3.14-1.41-3.14-3.14v-13.04c0-1.73,1.41-3.14,3.14-3.14h18.99c1.73,0,3.14,1.41,3.14,3.14v13.04c0,1.73-1.41,3.14-3.14,3.14ZM41.74,16.41c-.43,0-.79.35-.79.79v13.04c0,.43.35.79.79.79h18.99c.43,0,.79-.35.79-.79v-13.04c0-.43-.35-.79-.79-.79h-18.99Z"/>
+          <g>
+            <circle class="cls-2" cx="40.56" cy="39.37" r="3.04"/>
+            <path class="cls-2" d="M45.13,47.88c0-2.52-2.04-4.57-4.57-4.57s-4.57,2.04-4.57,4.57h9.13Z"/>
+          </g>
+          <g>
+            <circle class="cls-2" cx="51.23" cy="39.37" r="3.04"/>
+            <path class="cls-2" d="M55.79,47.88c0-2.52-2.04-4.57-4.57-4.57s-4.57,2.04-4.57,4.57h9.13Z"/>
+          </g>
+          <g>
+            <circle class="cls-2" cx="61.9" cy="39.37" r="3.04"/>
+            <path class="cls-2" d="M66.46,47.88c0-2.52-2.04-4.57-4.57-4.57s-4.57,2.04-4.57,4.57h9.13Z"/>
+          </g>
+          <polygon class="cls-2" points="44.27 27.85 43.6 27.19 49.22 21.56 52.99 25.33 58.19 20.13 58.86 20.79 52.99 26.66 49.22 22.9 44.27 27.85"/>
+          <circle class="cls-2" cx="43.93" cy="27.52" r="1.21"/>
+          <circle class="cls-2" cx="49.24" cy="22.22" r="1.21"/>
+          <circle class="cls-2" cx="52.99" cy="26.02" r="1.21"/>
+          <circle class="cls-2" cx="58.53" cy="20.57" r="1.21"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

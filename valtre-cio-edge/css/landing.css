@@ -4,27 +4,33 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     justify-content: center;
     align-items: center;
     transition: 0.2ms;
 
 }
+
 /*------- Basic Container -------*/
 .c-container {
     width: 100%;
-    margin:auto;
+    margin: auto;
     min-height: 100vh;
     min-height: 100dvh;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     border: red solid 0.01px;
 }
+
 .c-container--nav {
     width: 100%;
-    margin:auto;
+    margin: auto;
     height: 80px;
-    padding: 0 0.5rem 0 0.5rem;
-    border: red solid 0.01px;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
 }
+
 /*------- H E R O -------*/
 .c-hero {
     background-image: url("../img/conected-dots.svg");
@@ -33,131 +39,127 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.c-container__hero{
+
+.c-container__hero {
     display: flex;
     align-items: center;
     flex-direction: row;
 }
+
 .c-hero__logo {
     margin: auto;
     width: 40%;
 }
-.o-hero__logo{
+
+.o-hero__logo {
     width: 100%;
-}
-.c-hero__slogan {
-    margin: auto;
-}
-/*------- Nav Bar -------*/
-.c-navbar{
-    position: fixed;
-    width: 100%;
-    background-color: white;
-    display: inline-block;
-    margin: auto;
-    -webkit-box-shadow: 0px 10px 35px -12px rgba(0,0,0,0.35);
-    -moz-box-shadow: 0px 10px 35px -12px rgba(0,0,0,0.35);
-    box-shadow: 0px 10px 35px -12px rgba(0,0,0,0.35);
-}
-.c-navbar__logo {
-    margin: 0;
-}
-.c-navbar__logo img {
-    height: 50px;
-    width: 100%;
-}
-.o-hero-nav__a {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-    text-decoration: none;
-    color: black;
-    font-size: 13pt;
-}
-/*------- Nav Bar Desktop -------*/
-.o-hero-nav--desktop{
-    justify-content: space-between;
-}
-.o-hero-nav--desktop a{
-    margin-left: 20px;
-}
-/*------- Nav Bar Mobile -------*/
-.o-hero-nav--menu {
-    display: flex;
-    justify-content: space-between;
-    vertical-align: auto;
-    align-items: center;
-    height: 80px;
-    width: auto;
-}
-.o-burger__img {
-    height: 38px;
-    cursor: pointer;
-}
-#check {
-    display: none;
-}
-.c-hero__navmenu {
-    position: fixed;
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
-    background-color: #0F75BC;
-    top: 80px;
-    left: 0;
-    text-align: center;
-    padding-top: 50px;
-    top: -100%;
-    transition: all 0.5ms;
-}
-.o-hero-nav__a--menu {
-    display: block;
-    color: white;
-    font-weight: 400;
-    padding: 30px 0 30px 0;
-    font-size: 21pt;
-    letter-spacing: 2px;
-    transition: 0.5ms;
-}
-.o-hero-nav__a--menu:hover {
-    background-color: #0099ff;
-}
-.o-hero-nav__a--menu:focus{
-    font-weight: 800;
-}
-#check:checked ~ .c-hero__navmenu {
-    margin-top: 80px;
-    top: 0;
-}
-/*------- Cobertura -------*/
-.o-h2 {
-    letter-spacing: 2pt;
 }
 
+.c-hero__slogan {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.o-button {
+    padding: 15px;
+    background-color: #0099ff;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 15px;
+}
+
+/*------- Nav Bar -------*/
+
+/*------- Cobertura -------*/
+.c-servicemap {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    top: -80px;
+    position: relative;
+}
+
+.o-h2 {
+    margin-bottom: 30px;
+}
+
+.c-allservices {
+    display: grid;
+    margin-bottom: 50px;
+    list-style: none;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.c-allservices li {
+    display: flex;
+    width: auto;
+    justify-content: center;
+}
+
+.c-allservices__img {
+    width: 80%;
+}
+/*------- Structure -------*/
+.c-structuremap{
+    margin: auto;
+    padding: auto;
+    width: 50%;
+}
+/*------- Highlights -------*/
+.c-matrix{
+    margin: auto;
+    padding: auto;
+}
+.c-matrix__tec{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
 /*------- Typography -------*/
-.o-h1, .o-h2, .o-h3, .o-h4, .o-h5, .o-h6 {
+.o-h1,
+.o-h2,
+.o-h3,
+.o-h4,
+.o-h5,
+.o-h6 {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
     color: black;
 }
-.o-h1{
+.o-p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 13pt;
+}
+
+.o-h1 {
     font-size: 55pt;
     line-height: 55pt;
 }
+
 .o-h1 span {
     color: #0099ff;
 }
-.o-h2{
+
+.o-h2 {
     font-size: 55pt;
+    letter-spacing: 2pt;
 }
-.o-h3{
+
+.o-h3 {
     font-size: 34pt;
 }
-.o-h4{
+
+.o-h4 {
     font-size: 21pt;
 }
+
 p a {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -168,26 +170,38 @@ p a {
 /*------- Medía Querys -------*/
 /* xxxxs - mobile S */
 @media (min-width: 320px) {
+
     /*---- Basic Container ----*/
     .c-container {
         max-width: 320px;
     }
+
     .c-container--nav {
         max-width: 320px;
     }
+
     /*---- H E R O ----*/
     .c-navbar__desktop {
         display: none;
     }
+
     .c-container__hero {
         flex-direction: column;
     }
+
     .c-hero__logo {
         width: 75%;
         margin: auto auto 0.5rem auto;
     }
+
     .c-hero__slogan {
         margin: 10% auto auto auto;
+    }
+    .c-hero__slogan p {
+        margin: 20px;
+    }
+    .o-button {
+        font-weight: 600;
     }
     .o-h1 {
         text-align: center;
@@ -195,83 +209,145 @@ p a {
         line-height: 35pt;
     }
 
+    /*---- N A V ----*/
     .c-navbar__logo img {
         height: 30px;
     }
+
     .c-hero__navmenu {
-        width: 80%;
+        width: 100%;
     }
-}    
+
+    /*---- Cobertura ----*/
+    .o-h2 {
+        font-size: 28pt;
+        line-height: 28pt;
+        text-align: center;
+    }
+
+    .c-allservices {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
 /* xxxs - mobile M */
 @media (min-width: 375px) {
     .c-container {
         max-width: 375px;
     }
+
     .c-container--nav {
         max-width: 375px;
     }
+
     /*---- H E R O ----*/
     .c-navbar__desktop {
         display: none;
     }
+
     .c-container__hero {
         flex-direction: column;
     }
+
     .c-hero__logo {
         width: 70%;
     }
+
     .o-h1 {
         text-align: center;
         font-size: 40pt;
         line-height: 40pt;
     }
-.o-burger__img {
-    border: red;
+
+    /*---- Cobertura ----*/
+    .o-h2 {
+        font-size: 28pt;
+        line-height: 28pt;
+        text-align: center;
+    }
+
+    .c-allservices {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    /*---- Cobertura ----*/
+    .o-h2 {
+        font-size: 28pt;
+        line-height: 28pt;
+        text-align: center;
+    }
+    .c-servicemap{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+    .c-allservices {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
 }
-}
+
 /* xxs - mobile L */
 @media (min-width: 425px) {
     .c-container {
         max-width: 425px;
     }
+
     .c-container--nav {
         max-width: 425px;
     }
+
     /*---- H E R O ----*/
     .c-navbar__desktop {
         display: none;
     }
+
     .c-container__hero {
         flex-direction: column;
     }
+
     .c-hero__logo {
         width: 60%;
     }
+
     .o-h1 {
         text-align: center;
         font-size: 40pt;
         line-height: 40pt;
     }
+    .c-allservices__img {
+        width: 70%;
+    }
 }
+
 /* xs - mobile XL */
 @media (min-width: 475px) {
     .c-container {
         max-width: 475px;
     }
+
     .c-container--nav {
         max-width: 475px;
     }
+
     /*---- H E R O ----*/
     .c-navbar__desktop {
         display: none;
     }
+
     .c-container__hero {
         flex-direction: column;
     }
+
     .o-h1 {
         text-align: center;
         font-size: 45pt;
         line-height: 45pt;
+    }
+    .c-allservices__img {
+        width: 65%;
     }
 }
 
@@ -280,18 +356,25 @@ p a {
     .c-container {
         max-width: 640px;
     }
+
     .c-container--nav {
         max-width: 640px;
     }
+
     /*---- H E R O ----*/
     .c-navbar__desktop {
         display: none;
     }
+
     .c-container__hero {
         flex-direction: column;
     }
+
     .c-hero__logo {
         width: 50%;
+    }
+    .c-allservices__img {
+        width: 55%;
     }
 }
 
@@ -300,23 +383,35 @@ p a {
     .c-container {
         max-width: 768px;
     }
+
     .c-container--nav {
         max-width: 768px;
     }
+
     /*---- H E R O ----*/
     .c-navbar__desktop {
         display: none;
     }
+
     .c-container__hero {
         flex-direction: column;
     }
+
     .c-hero__logo {
         width: 40%;
     }
+
     .o-h1 {
         text-align: center;
         font-size: 50pt;
         line-height: 50pt;
+    }
+    .c-allservices__img {
+        width: 50%;
+    }
+    .c-allservices {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
     }
 }
 
@@ -325,25 +420,32 @@ p a {
     .c-container {
         max-width: 1024px;
     }
+
     .c-container--nav {
         max-width: 1024px;
     }
+
     /*---- H E R O ----*/
     .c-navbar__desktop {
         display: flex;
     }
+
     .c-navbar__mobile {
         display: none;
     }
+
     .c-container__hero {
         flex-direction: row;
     }
+
     .c-hero__logo {
         margin: auto;
     }
+
     .c-hero__slogan {
         margin: auto;
     }
+
     .o-h1 {
         text-align: left;
         font-size: 55pt;
@@ -355,9 +457,11 @@ p a {
     .c-container {
         max-width: 1280px;
     }
+
     .c-container--nav {
         max-width: 1280px;
     }
+
     /*---- H E R O ----*/
     .c-navbar__mobile {
         display: none;
@@ -369,13 +473,16 @@ p a {
     .c-container {
         max-width: 1536px;
     }
+
     .c-container--nav {
         max-width: 1536px;
     }
+
     /*---- H E R O ----*/
     .c-navbar__mobile {
         display: none;
     }
+
     .o-h1 {
         text-align: left;
         font-size: 70pt;
