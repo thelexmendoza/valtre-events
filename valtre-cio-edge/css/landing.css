@@ -9,7 +9,6 @@ body {
     justify-content: center;
     align-items: center;
     transition: 0.2ms;
-
 }
 
 /*------- Basic Container -------*/
@@ -20,7 +19,7 @@ body {
     min-height: 100dvh;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    border: red solid 0.01px;
+    border: royalblue solid 0.1px;
 }
 
 .c-container--nav {
@@ -63,13 +62,14 @@ body {
     align-items: center;
 }
 .o-button {
+    margin-top: 20px;
     padding: 15px;
-    background-color: #0099ff;
+    background-color: #00AEEF;
     font-weight: 600;
     color: white;
     text-decoration: none;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 45px;
 }
 
 /*------- Nav Bar -------*/
@@ -84,6 +84,7 @@ body {
 }
 
 .o-h2 {
+    padding-top: 30px;
     margin-bottom: 30px;
 }
 
@@ -114,11 +115,34 @@ body {
 .c-matrix{
     margin: auto;
     padding: auto;
+    display: grid;
+    list-style: none;
+    grid-template-columns: 1fr;
+    margin-bottom: 60px;
+}
+.c-matrix li {
+    display: flex;
+    width: auto;
+    justify-content: center;
 }
 .c-matrix__tec{
     width: 100%;
     margin: auto;
-    padding: auto;
+    padding-top: 5px;
+}
+/*------- Experience -------*/
+.c-clients {
+    display: grid;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    list-style: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
+}
+.c-clients li {
+    display: flex;
+    width: auto;
+    justify-content: center;
 }
 /*------- Typography -------*/
 .o-h1,
@@ -144,7 +168,7 @@ body {
 }
 
 .o-h1 span {
-    color: #0099ff;
+    color: #00AEEF;
 }
 
 .o-h2 {
