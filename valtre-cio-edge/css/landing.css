@@ -14,8 +14,6 @@ body {
 .c-container {
     width: 100%;
     margin:auto;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
     min-height: 100vh;
     min-height: 100dvh;
     border: red solid 0.5px;
@@ -24,8 +22,8 @@ body {
     width: 100%;
     margin:auto;
     height: 80px;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding: 0 0.5rem 0 0.5rem;
+    border: red solid 0.5px;
 }
 /*------- H E R O -------*/
 .c-hero {
@@ -61,6 +59,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: red solid 0.5px;
     -webkit-box-shadow: 0px 10px 35px -12px rgba(0,0,0,0.35);
     -moz-box-shadow: 0px 10px 35px -12px rgba(0,0,0,0.35);
     box-shadow: 0px 10px 35px -12px rgba(0,0,0,0.35);
@@ -81,15 +80,27 @@ body {
     color: black;
     font-size: 13pt;
 }
+/*------- Nav Bar Desktop -------*/
 .o-hero-nav--desktop{
     justify-content: space-between;
 }
 .o-hero-nav--desktop a{
     margin-left: 20px;
 }
+/*------- Nav Bar Mobile -------*/
+.o-hero-nav--menu {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: auto;
+    align-items: center;
+    height: 80px;
+    width: auto;
+    -webkit-box-shadow: 0px 10px 35px -12px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 10px 35px -12px rgba(0,0,0,0.35);
+    box-shadow: 0px 10px 35px -12px rgba(0,0,0,0.35);
+}
 .o-burger__img {
     height: 38px;
-    float: right;
     cursor: pointer;
 }
 #check {
@@ -124,7 +135,8 @@ body {
     font-weight: 800;
 }
 #check:checked ~ .c-hero__navmenu {
-    top: auto;
+    margin: 80px;
+    top: 0;
 }
 /*------- Cobertura -------*/
 .o-h2 {
@@ -172,7 +184,7 @@ p a {
         max-width: 320px;
     }
     /*---- H E R O ----*/
-    .o-hero-nav--desktop {
+    .c-navbar__desktop {
         display: none;
     }
     .c-container__hero {
@@ -200,7 +212,7 @@ p a {
         max-width: 375px;
     }
     /*---- H E R O ----*/
-    .o-hero-nav--desktop {
+    .c-navbar__desktop {
         display: none;
     }
     .c-container__hero {
@@ -224,7 +236,7 @@ p a {
         max-width: 425px;
     }
     /*---- H E R O ----*/
-    .o-hero-nav--desktop {
+    .c-navbar__desktop {
         display: none;
     }
     .c-container__hero {
@@ -248,7 +260,7 @@ p a {
         max-width: 475px;
     }
     /*---- H E R O ----*/
-    .o-hero-nav--desktop {
+    .c-navbar__desktop {
         display: none;
     }
     .c-container__hero {
@@ -270,7 +282,7 @@ p a {
         max-width: 640px;
     }
     /*---- H E R O ----*/
-    .o-hero-nav--desktop {
+    .c-navbar__desktop {
         display: none;
     }
     .c-container__hero {
@@ -290,7 +302,7 @@ p a {
         max-width: 768px;
     }
     /*---- H E R O ----*/
-    .o-hero-nav--desktop {
+    .c-navbar__desktop {
         display: none;
     }
     .c-container__hero {
@@ -315,10 +327,10 @@ p a {
         max-width: 1024px;
     }
     /*---- H E R O ----*/
-    .o-hero-nav--desktop {
+    .c-navbar__desktop {
         display: flex;
     }
-    .o-hero-nav--menu {
+    .c-navbar__mobile {
         display: none;
     }
     .c-container__hero {
@@ -345,7 +357,7 @@ p a {
         max-width: 1280px;
     }
     /*---- H E R O ----*/
-    .o-hero-nav--menu {
+    .c-navbar__mobile {
         display: none;
     }
 }
@@ -359,7 +371,7 @@ p a {
         max-width: 1536px;
     }
     /*---- H E R O ----*/
-    .o-hero-nav--menu {
+    .c-navbar__mobile {
         display: none;
     }
     .o-h1 {
