@@ -559,16 +559,59 @@ p a {
         font-size: 50pt;
         line-height: 50pt;
     }
+    /*---- Services ----*/
+    .o-h2 {
+        font-size: 32pt;
+        line-height: 32pt;
+    }
     .c-allservices__img {
-        width: 50%;
+        width: 70%;
     }
     .c-allservices {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
     }
+    /*---- Structure ----*/
+    .c-structure {
+        margin: 0 0 15% 0;
+    }
+    /*---- Experience ----*/
+    .c-clients__logo {
+        margin: 15px;
+    }
+    /*---- Team ----*/
+    .c-team__valtre  {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: first baseline;
+    }
+    .c-team__managers {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: first baseline;
+     }
+     .c-team__managers .c-card {
+        margin: 7px;
+     }
+     .c-team__kams {
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: start;
+        -ms-grid-column-align: center;
+     }
+     .c-team__kams .c-card {
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: first baseline;
+     }
 }
 
-/* lg - Desktop */
+/* lg -------------------- Desktop */
 @media (min-width: 1024px) {
     .c-container {
         max-width: 1024px;
@@ -608,6 +651,7 @@ p a {
         font-size: 34pt;
         line-height: 34pt;
     }
+    /*---- Services ----*/
     .c-services {
         display: flex;
         flex-direction: row;
@@ -620,6 +664,9 @@ p a {
         font-size: 21pt;
         line-height: 21pt;
     }
+    .c-servicemap {
+        width: 70%;
+    }
     .c-allservices__img {
         width: 90%;
     }
@@ -627,6 +674,7 @@ p a {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
     }
+    /*---- Structure ----*/
     .c-structure {
         display: flex;
         flex-direction: row;
@@ -644,15 +692,18 @@ p a {
         font-size: 40pt;
         line-height: 40pt;
     }
+    /*---- Highlights ----*/
     .c-matrix{
         grid-template-columns: 1fr 1fr;
     }
+    /*---- Experience ----*/
     .c-clients {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     .c-clients__logo {
-        margin: 15px;
+        margin: 20px;
     }
+    /*---- Team ----*/
     .c-team__valtre  {
         display: flex;
         flex-direction: row;
@@ -666,12 +717,6 @@ p a {
        align-items: first baseline;
     }
     .c-team__kams {
-        /* display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        justify-content: center;
-        align-items: first baseline; */
-
         display: flex;
         flex-direction: row;
         justify-content: center;
