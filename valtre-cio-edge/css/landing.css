@@ -103,14 +103,33 @@ body {
 }
 
 .c-allservices__img {
-    width: 80%;
+    width: 100%;
 }
 /*------- Structure -------*/
-.c-structuremap{
+.c-structure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.c-structuremap {
     margin: auto;
     padding: auto;
-    width: 50%;
+    width: 100%;
 }
+.c-structuredevelopers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.o-avatar {
+    height: 50px;
+    margin-right: 10px;
+    padding: auto;
+}
+
 /*------- Highlights -------*/
 .c-matrix{
     margin: auto;
@@ -163,8 +182,8 @@ body {
 }
 
 .o-h1 {
-    font-size: 55pt;
-    line-height: 55pt;
+    font-size: 89pt;
+    line-height: 89pt;
 }
 
 .o-h1 span {
@@ -173,15 +192,18 @@ body {
 
 .o-h2 {
     font-size: 55pt;
+    line-height: 55pt;
     letter-spacing: 2pt;
 }
 
 .o-h3 {
     font-size: 34pt;
+    line-height: 34pt;
 }
 
 .o-h4 {
     font-size: 21pt;
+    line-height: 21pt;
 }
 
 p a {
@@ -252,6 +274,11 @@ p a {
     .c-allservices {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    /*---- Estructura ----*/
+    .o-h3 {
+        font-size: 21pt;
+        line-height: 21pt;
     }
 }
 
