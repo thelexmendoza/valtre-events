@@ -597,11 +597,80 @@ p a {
 
     .c-hero__slogan {
         margin: auto;
+        align-items: flex-start;
     }
 
     .o-h1 {
         text-align: left;
         font-size: 55pt;
+    }
+    .o-h2 {
+        font-size: 34pt;
+        line-height: 34pt;
+    }
+    .c-services {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .c-service-wrap h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 21pt;
+        line-height: 21pt;
+    }
+    .c-allservices__img {
+        width: 90%;
+    }
+    .c-allservices {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .c-structure {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .c-structuremap {
+        width: 75%;
+        margin-left: -15%;
+    }
+    .o-avatar {
+        height: 100px;
+    }
+    .c-structuredevelopers .o-h3 {
+        font-size: 40pt;
+        line-height: 40pt;
+    }
+    .c-matrix{
+        grid-template-columns: 1fr 1fr;
+    }
+    .c-clients {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .c-clients__logo {
+        margin: 15px;
+    }
+    .c-team__valtre  {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: first baseline;
+    }
+    .c-team__managers {
+       display: flex;
+       flex-direction: row;
+       justify-content: center;
+       align-items: first baseline;
+    }
+    .c-team__kams {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+        align-items: first baseline;
     }
 }
 
