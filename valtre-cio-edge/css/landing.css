@@ -666,9 +666,14 @@ p a {
        align-items: first baseline;
     }
     .c-team__kams {
-        display: grid;
+        /* display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+        justify-content: center;
+        align-items: first baseline; */
+
+        display: flex;
+        flex-direction: row;
         justify-content: center;
         align-items: first baseline;
     }
