@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valtre - Blogs</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'valtre-blue': '#0a1a2a',
+                        'valtre-cyan': '#00aeef',
+                        'valtre-gray': '#2E2E2E',
+                        'valtre-mint': '#00b4a0',
+                        'valtre-purple': '#a020f0',
+                        'valtre-light-blue': '#e6f7ff'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .neobrutal-shadow {
+            box-shadow: 8px 8px 0px #0a1a2a;
+        }
+        
+        .neobrutal-shadow-cyan {
+            box-shadow: 8px 8px 0px #00aeef;
+        }
+        
+        .neobrutal-shadow-mint {
+            box-shadow: 8px 8px 0px #00b4a0;
+        }
+        
+        .neobrutal-shadow-purple {
+            box-shadow: 8px 8px 0px #a020f0;
+        }
+        
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translate(-4px, -4px);
+        }
+        
+        .service-card {
+            border: 4px solid #0A2540;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px #00aeef;
+        }
+        
+        /* Floating animations */
+        .float-1 {
+            animation: float1 8s ease-in-out infinite;
+        }
+        
+        .float-2 {
+            animation: float2 10s ease-in-out infinite;
+        }
+        
+        .float-3 {
+            animation: float3 12s ease-in-out infinite;
+        }
+        
+        .float-4 {
+            animation: float4 9s ease-in-out infinite;
+        }
+        
+        @keyframes float1 {
+            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) translateX(10px) rotate(5deg); }
+            50% { transform: translateY(-10px) translateX(-5px) rotate(-3deg); }
+            75% { transform: translateY(-25px) translateX(15px) rotate(8deg); }
+        }
+        
+        @keyframes float2 {
+            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            33% { transform: translateY(-15px) translateX(-10px) rotate(-5deg); }
+            66% { transform: translateY(-30px) translateX(5px) rotate(10deg); }
+        }
+        
+        @keyframes float3 {
+            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            50% { transform: translateY(-35px) translateX(-15px) rotate(-8deg); }
+        }
+        
+        @keyframes float4 {
+            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            25% { transform: translateY(-10px) translateX(-8px) rotate(3deg); }
+            50% { transform: translateY(-25px) translateX(12px) rotate(-6deg); }
+            75% { transform: translateY(-5px) translateX(-3px) rotate(4deg); }
+        }
+        
+        /* Popup windows animation */
+        .popup-window {
+            animation: popupFloat 15s ease-in-out infinite;
+        }
+        
+        @keyframes popupFloat {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; }
+            25% { transform: translateY(-30px) scale(1.05); opacity: 0.9; }
+            50% { transform: translateY(-15px) scale(0.95); opacity: 0.8; }
+            75% { transform: translateY(-40px) scale(1.1); opacity: 1; }
+        }
+        
+        /* Scroll animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-in-up.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-in-left.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-in-right.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s ease-out;
+        }
+        
+        .scale-in.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body class="bg-white text-valtre-gray">
+    <!-- Header -->
+    <header class="bg-white border-b-4 border-valtre-blue relative z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a class="flex items-center" href="../index.html">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3gJw2kJfw3teZjZ4AhrgKYUhrCmxeEVx4AA&s" 
+                         alt="Valtre Logo" 
+                         class="h-12 w-auto"
+                         onerror="this.src=''; this.alt='Valtre'; this.style.display='none';">
+                </a>
+                
+                <!-- Navigation Links -->
+                <nav class="flex space-x-4">
+                    <a class="bg-valtre-cyan text-valtre-blue px-6 py-2 font-bold text-sm neobrutal-shadow hover-lift border-2 border-valtre-blue" href="../index.html">
+                        inicio
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blogs Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black text-valtre-blue mb-4">Nuestros Blogs</h2>
+                <p class="text-lg font-bold text-valtre-cyan">Artículos y noticias sobre tecnología y negocios</p>
+            </div>
+
+        <div class="flex flex-col items-center gap-8">
+            <!-- Blog Card 1 -->
+            <div class="service-card bg-white p-6 w-full md:w-3/4 flex flex-col">
+                <img src="blogs/2025/sep/img/Semana 2 - SDS - Blog Hero.webp" alt="Imagen Blog 1" class="w-full h-56 object-cover rounded-lg mb-4">
+                <div class="flex flex-col gap-2">
+                    <span class="text-xs text-valtre-mint font-bold mb-1">10 Septiembre 2025</span>
+                    <h3 class="text-xl font-black text-valtre-blue mb-3">Escribir Código Limpio: Por qué importa, cómo lograrlo y cómo medirlo</h3>
+                    <p class="text-valtre-gray font-medium mb-4 text-sm">
+                        En este artículo, exploraremos la importancia de escribir código limpio, las mejores prácticas para lograrlo y cómo medir su efectividad en el desarrollo de software.
+                    </p>
+                    <a href="/valtre-events/blogs/2025/sep/codigo-limpio-ventajas-mejores-practicas-medicion-calidad.html" class="bg-valtre-cyan text-valtre-blue px-4 py-2 font-bold text-sm neobrutal-shadow hover-lift border-2 border-valtre-blue self-start">Leer más</a>
+                </div>
+            </div>
+           
+        <!-- 
+            <div class="service-card bg-white p-6 w-full md:w-3/4 flex flex-col">
+                <img src="https://via.placeholder.com/800x300?text=Imagen+Blog+2" alt="Imagen Blog 2" class="w-full h-56 object-cover rounded-lg mb-4">
+                <div class="flex flex-col gap-2">
+                    <span class="text-xs text-valtre-mint font-bold mb-1">05 Septiembre 2025</span>
+                    <h3 class="text-xl font-black text-valtre-blue mb-3">Título del Blog 2</h3>
+                    <p class="text-valtre-gray font-medium mb-4 text-sm">
+                        Breve descripción del contenido del blog 2. Este es un resumen que invita a leer más.
+                    </p>
+                    <a href="blog-post.html" class="bg-valtre-cyan text-valtre-blue px-4 py-2 font-bold text-sm neobrutal-shadow hover-lift border-2 border-valtre-blue self-start">Leer más</a>
+                </div>
+            </div>
+
+            
+            <div class="service-card bg-white p-6 w-full md:w-3/4 flex flex-col">
+                <img src="https://via.placeholder.com/800x300?text=Imagen+Blog+3" alt="Imagen Blog 3" class="w-full h-56 object-cover rounded-lg mb-4">
+                <div class="flex flex-col gap-2">
+                    <span class="text-xs text-valtre-mint font-bold mb-1">01 Septiembre 2025</span>
+                    <h3 class="text-xl font-black text-valtre-blue mb-3">Título del Blog 3</h3>
+                    <p class="text-valtre-gray font-medium mb-4 text-sm">
+                        Breve descripción del contenido del blog 3. Este es un resumen que invita a leer más.
+                    </p>
+                    <a href="blog-post.html" class="bg-valtre-cyan text-valtre-blue px-4 py-2 font-bold text-sm neobrutal-shadow hover-lift border-2 border-valtre-blue self-start">Leer más</a>
+                </div>
+            </div>
+            -->
+        </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-valtre-gray py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in-up">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-black text-white mb-4">Información de Contacto</h3>
+                    <div class="space-y-3 text-white">
+                        <p class="font-medium text-sm">
+                            <strong>Dirección:</strong><br>
+                            Torre Gauthier<br>
+                            Miguel Hidalgo y Costilla 2035, Belisario Domínguez 2016<br>
+                            Obispado, 64060 Monterrey, N.L.
+                        </p>
+                        <p class="font-medium text-sm">
+                            <strong>Correo:</strong> marketing@valtre.com
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-lg font-black text-white mb-4">Redes Sociales</h3>
+                    <div class="space-y-2">
+                        <a href="https://www.linkedin.com/company/valtre/posts/?feedView=all" class="block text-valtre-cyan font-medium hover:text-valtre-light-blue transition-colors" target="_blank">LinkedIn</a>
+                        <a href="https://www.instagram.com/valtre.tech?igsh=aTkweno0ZncxNnhu" class="block text-valtre-cyan font-medium hover:text-valtre-light-blue transition-colors" target="_blank">Instagram</a>
+                        <a href="https://www.facebook.com/share/16zVJ9PyFi/?mibextid=wwXIfr" class="block text-valtre-cyan font-medium hover:text-valtre-light-blue transition-colors" target="_blank">Facebook</a>
+                    </div>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h3 class="text-lg font-black text-white mb-4">Legal</h3>
+                    <a href="#" class="text-valtre-cyan font-medium hover:text-valtre-light-blue transition-colors">Aviso de privacidad</a>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 mt-8 pt-8 text-center">
+                <p class="text-white font-medium text-sm">© 2025 Valtre. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+        <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animation classes
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97974e74f51920aa',t:'MTc1NjkyNDEwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código Limpio: Ventajas, Mejores Prácticas y Cómo Medir la Calidad | SDS</title>
+    <meta name="description" content="Descubre qué es el código limpio, por qué evita el caos del 'código espagueti', cómo implementarlo con tips prácticos y métricas para medir su calidad. ¡Mejora tu desarrollo software ahora!">
+    <meta name="keywords" content="código limpio, clean code, código espagueti, ventajas código limpio, cómo escribir código limpio, métricas calidad código, principios SOLID, herramientas análisis código, mejores prácticas desarrollo software, refactorización código, deuda técnica">
+    <meta name="author" content="Valtre - Software Development Solutions">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Código Limpio: Ventajas, Mejores Prácticas y Cómo Medir la Calidad">
+    <meta property="og:description" content="Descubre qué es el código limpio, por qué evita el caos del 'código espagueti' y cómo implementarlo con tips prácticos.">
+    <meta property="og:image" content="img/Semana 2 - SDS - Blog Hero.webp">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Código Limpio: Ventajas y Mejores Prácticas">
+    <meta property="twitter:description" content="Aprende sobre código limpio y cómo mejora la calidad de tu software.">
+    <meta property="twitter:image" content="img/Semana 2 - SDS - Blog Hero.webp">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'valtre-blue': '#0a1a2a',
+                        'valtre-cyan': '#00aeef',
+                        'valtre-gray': '#2E2E2E',
+                        'valtre-mint': '#00b4a0',
+                        'valtre-purple': '#a020f0',
+                        'valtre-light-blue': '#e6f7ff'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .neobrutal-shadow {
+            box-shadow: 8px 8px 0px #0a1a2a;
+        }
+        
+        .neobrutal-shadow-cyan {
+            box-shadow: 8px 8px 0px #00aeef;
+        }
+        
+        .neobrutal-shadow-mint {
+            box-shadow: 8px 8px 0px #00b4a0;
+        }
+        
+        .neobrutal-shadow-purple {
+            box-shadow: 8px 8px 0px #a020f0;
+        }
+        
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translate(-4px, -4px);
+        }
+        
+        .service-card {
+            border: 4px solid #0A2540;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px #00aeef;
+        }
+        
+        /* Floating animations */
+        .float-1 {
+            animation: float1 8s ease-in-out infinite;
+        }
+        
+        .float-2 {
+            animation: float2 10s ease-in-out infinite;
+        }
+        
+        .float-3 {
+            animation: float3 12s ease-in-out infinite;
+        }
+        
+        .float-4 {
+            animation: float4 9s ease-in-out infinite;
+        }
+        
+        @keyframes float1 {
+            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) translateX(10px) rotate(5deg); }
+            50% { transform: translateY(-10px) translateX(-5px) rotate(-3deg); }
+            75% { transform: translateY(-25px) translateX(15px) rotate(8deg); }
+        }
+        
+        @keyframes float2 {
+            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            33% { transform: translateY(-15px) translateX(-10px) rotate(-5deg); }
+            66% { transform: translateY(-30px) translateX(5px) rotate(10deg); }
+        }
+        
+        @keyframes float3 {
+            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            50% { transform: translateY(-35px) translateX(-15px) rotate(-8deg); }
+        }
+        
+        @keyframes float4 {
+            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            25% { transform: translateY(-10px) translateX(-8px) rotate(3deg); }
+            50% { transform: translateY(-25px) translateX(12px) rotate(-6deg); }
+            75% { transform: translateY(-5px) translateX(-3px) rotate(4deg); }
+        }
+        
+        /* Popup windows animation */
+        .popup-window {
+            animation: popupFloat 15s ease-in-out infinite;
+        }
+        
+        @keyframes popupFloat {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; }
+            25% { transform: translateY(-30px) scale(1.05); opacity: 0.9; }
+            50% { transform: translateY(-15px) scale(0.95); opacity: 0.8; }
+            75% { transform: translateY(-40px) scale(1.1); opacity: 1; }
+        }
+        
+        /* Scroll animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-in-up.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-in-left.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-in-right.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s ease-out;
+        }
+        
+        .scale-in.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body class="bg-white text-valtre-gray">
+    <!-- Header -->
+    <header class="bg-white border-b-4 border-valtre-blue relative z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a class="flex items-center" href="../index.html">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3gJw2kJfw3teZjZ4AhrgKYUhrCmxeEVx4AA&s" 
+                         alt="Valtre Logo" 
+                         class="h-12 w-auto"
+                         onerror="this.src=''; this.alt='Valtre'; this.style.display='none';">
+                </a>
+                <!-- Navigation Links -->
+                <nav class="flex space-x-4">
+                    <div class="flex gap-4">
+                        <a class="bg-valtre-mint text-valtre-blue px-6 py-2 font-bold text-sm neobrutal-shadow hover-lift border-2 border-valtre-blue" href="/valtre-events/blogs.html">
+                            Blogs
+                        </a> 
+                        <a class="bg-valtre-cyan text-valtre-blue px-6 py-2 font-bold text-sm neobrutal-shadow hover-lift border-2 border-valtre-blue" href="../index.html">
+                            inicio
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero con imagen de fondo, título y subtítulo -->
+    <section class="relative w-full h-screen flex items-center justify-center mb-12">
+        <img src="img/Semana 2 - SDS - Blog Hero.webp" alt="Spaghetti Code Vs Clean Code" class="absolute inset-0 w-full h-full object-cover brightness-75">
+        <div class="relative z-10 text-center w-full px-6" style="max-width:1000px;">
+            <h1 class="text-4xl md:text-5xl font-black text-white mb-4 drop-shadow-lg">Escribir Código Limpio: Por Qué Importa y Cómo Lograrlo</h1>
+            <p class="text-lg md:text-2xl text-white font-medium drop-shadow-lg">Descubre cómo el código limpio puede transformar la calidad de tus proyectos de software y las mejores prácticas para implementarlo</p>
+            <span class="inline-block mt-6 bg-valtre-mint text-white px-4 py-2 rounded font-bold text-sm shadow-md">10 Septiembre 2025</span>
+        </div>
+    </section>
+
+    <!-- Contenido principal del blog -->
+    <div class="mx-auto px-6 py-8" style="max-width:800px;">
+        <div class="text-valtre-gray text-lg leading-relaxed">
+            <p class="mb-6">
+                En el mundo del desarrollo de software, la calidad del código no es un lujo: es una necesidad. El código limpio es la base para productos sostenibles, mantenibles y escalables. Por el contrario, el temido “código espagueti” puede llevar incluso al mejor de los proyectos al caos. En este blog, exploramos qué significa escribir código limpio, sus ventajas, las trampas del código desordenado y cómo establecer una cultura de mejora continua.
+            </p>
+
+            <!-- Sección Código Espagueti -->
+            <div class="mt-[60px]">
+                <h2 class="text-2xl font-bold text-valtre-blue mb-[25px] border-b border-valtre-cyan pb-2">
+                    ¿Qué es el Código Espagueti?
+                </h2>
+                <div class="mb-[25px]">
+                    <p class="mb-4 text-valtre-gray">
+                        Código espagueti es un término que describe código:
+                    </p>
+                    <ul class="list-disc pl-5 text-valtre-gray space-y-1 mb-4">
+                        <li>Desorganizado</li>
+                        <li>Difícil de leer y mantener</li>
+                        <li>Sin separación clara de responsabilidades</li>
+                        <li>Con muchas dependencias implícitas</li>
+                        <li>Repleto de efectos secundarios y lógica mezclada</li>
+                    </ul>
+                    <h3 class="text-lg font-bold text-valtre-blue mb-2">Desventajas del Código Espagueti</h3>
+                    <ul class="list-disc pl-5 text-valtre-gray space-y-1">
+                        <li>Dificultad para hacer cambios sin romper otras partes</li>
+                        <li>Curva de aprendizaje alta para nuevos desarrolladores</li>
+                        <li>Altos costos de mantenimiento</li>
+                        <li>Mayor probabilidad de bugs</li>
+                        <li>Dificultad para automatizar pruebas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sección Código Limpio -->
+            <div class="mt-[60px]">
+                <h2 class="text-2xl font-bold text-valtre-blue mb-[25px] border-b border-valtre-cyan pb-2">
+                    ¿Qué es el Código Limpio?
+                </h2>
+                <div class="mb-[25px]">
+                    <p class="mb-6">
+                        El código limpio es la base para productos de software sostenibles, mantenibles y escalables. Como dijo Robert C. Martin (Uncle Bob): <em class="text-valtre-mint">"El código limpio siempre parece haber sido escrito por alguien que se preocupa"</em>.
+                    </p>
+                    <div class="bg-valtre-light-blue/60 border-l-4 border-valtre-cyan rounded-lg p-4 mb-6">
+                        <h3 class="text-lg font-bold text-valtre-blue mb-2">Características del Código Limpio</h3>
+                        <ul class="list-disc pl-5 text-valtre-gray space-y-1">
+                            <li>Legible y autoexplicativo</li>
+                            <li>Simple de entender</li>
+                            <li>Consistente y bien estructurado</li>
+                            <li>Fácil de probar y mantener</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección Ventajas Código Limpio -->
+            <div class="mt-[60px]">
+                <h2 class="text-2xl font-bold text-valtre-blue mb-[25px] border-b border-valtre-cyan pb-2">
+                    Ventajas de Escribir Código Limpio
+                </h2>
+                <div class="mb-[25px]">
+                    <div class="overflow-x-auto mb-6">
+                        <table class="min-w-full bg-white rounded-lg shadow border">
+                            <thead>
+                                <tr>
+                                    <th class="px-4 py-2 bg-valtre-blue text-white">Ventaja</th>
+                                    <th class="px-4 py-2 bg-valtre-blue text-white">Impacto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="even:bg-valtre-light-blue/40">
+                                    <td class="px-4 py-2">Mantenibilidad</td>
+                                    <td class="px-4 py-2">Facilita el soporte y evolución del producto</td>
+                                </tr>
+                                <tr class="even:bg-valtre-light-blue/40">
+                                    <td class="px-4 py-2">Legibilidad</td>
+                                    <td class="px-4 py-2">Acelera el onboarding de nuevos desarrolladores</td>
+                                </tr>
+                                <tr class="even:bg-valtre-light-blue/40">
+                                    <td class="px-4 py-2">Reutilización</td>
+                                    <td class="px-4 py-2">Permite escribir menos código duplicado</td>
+                                </tr>
+                                <tr class="even:bg-valtre-light-blue/40">
+                                    <td class="px-4 py-2">Facilidad para testear</td>
+                                    <td class="px-4 py-2">Mejora la calidad general del software</td>
+                                </tr>
+                                <tr class="even:bg-valtre-light-blue/40">
+                                    <td class="px-4 py-2">Menor deuda técnica</td>
+                                    <td class="px-4 py-2">Reduce el riesgo futuro y costos de mantenimiento</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección Mejores Prácticas -->
+            <div class="mt-[60px]">
+                <h2 class="text-2xl font-bold text-valtre-blue mb-[25px] border-b border-valtre-cyan pb-2">
+                    Mejores Prácticas para Código Limpio
+                </h2>
+                <div class="mb-[25px]">
+                    <div class="bg-green-50 border-l-4 border-green-400 rounded-lg p-4 mb-6">
+                        <h3 class="text-lg font-bold text-green-700 mb-2">Tips Prácticos</h3>
+                        <ul class="list-disc pl-5 text-valtre-gray space-y-1">
+                            <li>Usa nombres claros y significativos para variables y funciones</li>
+                            <li>Crea funciones pequeñas con una sola responsabilidad</li>
+                            <li>Evita comentarios innecesarios (el código debe explicarse por sí mismo)</li>
+                            <li>Escribe pruebas automatizadas</li>
+                            <li>Aplica principios SOLID</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección Métricas -->
+            <div class="mt-[60px]">
+                <h2 class="text-2xl font-bold text-valtre-blue mb-[25px] border-b border-valtre-cyan pb-2">
+                    Métricas para Evaluar la Calidad del Código
+                </h2>
+                <div class="mb-[25px]">
+                    <p class="mb-4">
+                        Medir la calidad del código es esencial para mejorar continuamente. Algunas métricas clave incluyen:
+                    </p>
+                    <div class="overflow-x-auto mb-6">
+                        <table class="min-w-full bg-white rounded-lg shadow border">
+                            <thead>
+                                <tr>
+                                    <th class="px-4 py-2 bg-valtre-blue text-white">Métrica</th>
+                                    <th class="px-4 py-2 bg-valtre-blue text-white">Qué mide</th>
+                                    <th class="px-4 py-2 bg-valtre-blue text-white">Herramientas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="even:bg-valtre-light-blue/40">
+                                    <td class="px-4 py-2">Coverage de Pruebas</td>
+                                    <td class="px-4 py-2">Porcentaje del código cubierto por pruebas</td>
+                                    <td class="px-4 py-2">SonarQube, Jest, Coverage.py</td>
+                                </tr>
+                                <tr class="even:bg-valtre-light-blue/40">
+                                    <td class="px-4 py-2">Complejidad Ciclomática</td>
+                                    <td class="px-4 py-2">Cantidad de caminos posibles en una función</td>
+                                    <td class="px-4 py-2">SonarQube, CodeClimate</td>
+                                </tr>
+                                <tr class="even:bg-valtre-light-blue/40">
+                                    <td class="px-4 py-2">Índice de Mantenibilidad</td>
+                                    <td class="px-4 py-2">Facilidad de mantenimiento del código</td>
+                                    <td class="px-4 py-2">Visual Studio, CodeScene</td>
+                                </tr>
+                                <tr class="even:bg-valtre-light-blue/40">
+                                    <td class="px-4 py-2">Duplicación de Código</td>
+                                    <td class="px-4 py-2">Código repetido que debe refactorizarse</td>
+                                    <td class="px-4 py-2">PMD, SonarQube</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección Conclusión -->
+            <div class="mt-[60px]">
+                <div class="bg-valtre-light-blue/60 rounded-lg p-6 mb-[25px]">
+                    <h2 class="text-2xl font-bold text-valtre-blue mb-2">Conclusión</h2>
+                    <p>
+                        Adoptar una cultura de <strong>código limpio</strong> es una inversión que paga dividendos en productividad, calidad y satisfacción del cliente. Aunque puede parecer más lento al principio, el ahorro en soporte, retrabajo y debugging se multiplica con el tiempo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <!-- Footer -->
+    <footer class="bg-valtre-gray py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in-up">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-black text-white mb-4">Información de Contacto</h3>
+                    <div class="space-y-3 text-white">
+                        <p class="font-medium text-sm">
+                            <strong>Dirección:</strong><br>
+                            Torre Gauthier<br>
+                            Miguel Hidalgo y Costilla 2035, Belisario Domínguez 2016<br>
+                            Obispado, 64060 Monterrey, N.L.
+                        </p>
+                        <p class="font-medium text-sm">
+                            <strong>Correo:</strong> marketing@valtre.com
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-lg font-black text-white mb-4">Redes Sociales</h3>
+                    <div class="space-y-2">
+                        <a href="https://www.linkedin.com/company/valtre/posts/?feedView=all" class="block text-valtre-cyan font-medium hover:text-valtre-light-blue transition-colors" target="_blank">LinkedIn</a>
+                        <a href="https://www.instagram.com/valtre.tech?igsh=aTkweno0ZncxNnhu" class="block text-valtre-cyan font-medium hover:text-valtre-light-blue transition-colors" target="_blank">Instagram</a>
+                        <a href="https://www.facebook.com/share/16zVJ9PyFi/?mibextid=wwXIfr" class="block text-valtre-cyan font-medium hover:text-valtre-light-blue transition-colors" target="_blank">Facebook</a>
+                    </div>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h3 class="text-lg font-black text-white mb-4">Legal</h3>
+                    <a href="#" class="text-valtre-cyan font-medium hover:text-valtre-light-blue transition-colors">Aviso de privacidad</a>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 mt-8 pt-8 text-center">
+                <p class="text-white font-medium text-sm">© 2025 Valtre. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+        <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animation classes
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97974e74f51920aa',t:'MTc1NjkyNDEwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
